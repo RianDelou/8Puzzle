@@ -16,13 +16,17 @@ def is_solvable(board):
     inversions = count_inversions(board)
     return inversions % 2 == 0
 
+def print_board(board):
+    for row in board:
+        print(' '.join(str(num) if num != 0 else ' ' for num in row))
+
 def main():
     # Definindo o estado inicial do tabuleiro (8-puzzle)
     initial_board = [
-        [1, 2, 3],
-        [4, 0, 6],  # 0 representa o espaço vazio
+        [1, 0, 3],
+        [4, 2, 6],  # 0 representa o espaço vazio
         [7, 5, 8]
-    ]
+    ]  
 
     goal_board = [
         [1, 2, 3],
@@ -36,6 +40,10 @@ def main():
             raise ValueError(f"O puzzle não é resolvível com esse estado inicial. Número de inversões ímpar: {inversions}")
         
         print("O puzzle é resolvível. Iniciando a busca...")
+        print("Estado inicial:")
+        print_board(initial_board)
+        print("\nEstado objetivo:")
+        print_board(goal_board)
 
         # Criando o estado inicial e objetivo
         initial_state = PuzzleState(initial_board)
@@ -48,9 +56,10 @@ def main():
         solution_path = search.iterative_deepening_search(max_depth=20)
 
         if solution_path:
-            print("Solução encontrada! Caminho:")
+            print("\nSolução encontrada! Caminho:")
             for move in solution_path:
-                print(move)
+                print_board(move)
+                print()  # Linha em branco para separar cada estado
         else:
             print("Solução não encontrada dentro da profundidade máxima.")
 
