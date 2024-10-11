@@ -3,6 +3,8 @@ from iterative_deepening_DFS import IterativeDeepeningDFS
 import time
 
 def count_inversions(board):
+
+
     flat_list = [num for row in board for num in row if num != 0]
     inversions = 0
     for i in range(len(flat_list)):
