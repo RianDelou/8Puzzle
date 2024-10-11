@@ -3,3 +3,6 @@
 ## (Translate)
 ### Implemente duas versões da função para o problema do 8-puzzle: uma que copia e edita a estrutura de dados para o nó pai s e outra que modifica diretamente o estado do nó pai (desfazendo as modificações conforme necessário). Escreva versões da busca iterativa em profundidade (iterative deepening depth-first search) que utilizem essas funções e compare seu desempenho.
 
+# Results
+- After the implementation, it is clear that the second version, in most cases, is faster than the first version. (However, it depends on which state is given for the computer to solve. It's better to analyze the complexity of the algorithm).
+
