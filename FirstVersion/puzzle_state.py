@@ -18,7 +18,6 @@ class PuzzleState:
         return self.board == goal_board
 
     def generate_possible_moves(self):
-        # Gerar movimentos possíveis a partir do estado atual
         moves = []
         i, j = self.empty_pos
         possible_positions = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]

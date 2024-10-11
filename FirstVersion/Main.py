@@ -72,7 +72,6 @@ def main():
         }
     ]
 
-    # Iterando sobre cada puzzle
     for index, puzzle in enumerate(puzzles, start=1):
         initial_board = puzzle["initial"]
         goal_board = puzzle["goal"]
@@ -105,7 +104,7 @@ def main():
                 print("\nSolução encontrada! Caminho:")
                 for move in solution_path:
                     print_board(move)
-                    print()  # Linha em branco para separar cada estado
+                    print()  
                 print(f"Tempo de execução: {execution_time:.4f} segundos")
             else:
                 print("Solução não encontrada dentro da profundidade máxima.")
